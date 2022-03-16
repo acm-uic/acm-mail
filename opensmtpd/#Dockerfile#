@@ -1,0 +1,12 @@
+# Inspired by https://github.com/wodby/opensmtpd/blob/master/Dockerfile
+
+FROM alpine:latest
+
+RUN apk add --no-cache
+    opensmtpd
+    opensmtpd-filter-rspamd
+
+VOLUME /etc/mail
+VOLUME /home 
+
+ENTRYPOINT ["./docker-entrypoint.sh"]

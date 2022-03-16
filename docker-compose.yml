@@ -1,0 +1,17 @@
+services:
+  redis:
+    image: redis
+
+  rspamd:
+    build: ./rspamd/
+    image: rspamd-img
+    environment:
+      - REDIS_ADDRESS=redis
+      
+  opensmtpd:
+    build: ./opensmtpd/
+    image: opensmtpd-img
+    ports:
+      - "465:465"
+      - "25:25"
+      - "587:587"
