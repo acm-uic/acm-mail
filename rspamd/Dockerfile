@@ -7,7 +7,7 @@ RUN apk add --no-cache rspamd ca-certificates
 
 VOLUME ["/var/lib/rspamd"]
 
-COPY ./rspamd.conf /config
+# COPY ./rspamd.conf /config
 
 EXPOSE 11332/tcp 11334/tcp 11335/tcp
 
