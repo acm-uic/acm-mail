@@ -2,10 +2,10 @@
 
 FROM alpine:latest
 
-RUN apk add --no-cache
-    opensmtpd
-    rspamd
-    opensmtpd-filter-rspamd
+RUN apk add --no-cache \
+    opensmtpd \
+    rspamd \
+    opensmtpd-filter-rspamd \
     redis
 
 
