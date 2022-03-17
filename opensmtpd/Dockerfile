@@ -2,15 +2,13 @@
 
 FROM alpine:latest
 
-RUN apk add --no-cache
-    opensmtpd
-    rspamd
+RUN apk add --no-cache \
+    opensmtpd \
     opensmtpd-filter-rspamd
-    redis
-
 
 VOLUME /etc/mail
-VOLUME /etc/rsmapd
-VOLUME /var/spool/smtpd
+VOLUME /home 
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
+EXPOSE [25, 465, 587]
+
+ENTRYPOINT ["smtpd", "-dv"]
