@@ -9,6 +9,8 @@ RUN apk add --no-cache \
 VOLUME /etc/mail
 VOLUME /home 
 
-EXPOSE [25, 465, 587]
+EXPOSE 25
+EXPOSE 465
+EXPOSE 587
 
 ENTRYPOINT ["smtpd", "-dv"]
