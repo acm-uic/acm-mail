@@ -12,5 +12,4 @@ services:
     image: opensmtpd-img
     ports:
       - "465:465"
-      - "25:25"
       - "587:587"
