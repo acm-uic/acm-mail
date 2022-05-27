@@ -7,7 +7,6 @@ services:
     image: rspamd-img
     environment:
       - REDIS_ADDRESS=redis
-      
   opensmtpd:
     build: ./opensmtpd/
     image: opensmtpd-img
