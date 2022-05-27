@@ -9,6 +9,8 @@ RUN apk add --no-cache \
 VOLUME /etc/mail
 VOLUME /home 
 
+COPY smtpd.conf /etc/mail/smtpd.conf
+
 #EXPOSE 25
 EXPOSE 465
 EXPOSE 587
