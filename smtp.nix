@@ -12,12 +12,12 @@ pkgs.dockerTools.buildImage {
 
   runAsRoot = ''
             #!${pkgs.runtimeShell}
+            mkdir -p /mail/
             cat << EOF > /mail/smtpd.conf
             pki ${domain} cert ${certPath}
             pki ${domain} key ${certKey}
 
-            filter check_dyndns phase connect match rdns regex
-            { '.*\.dyn\..*', '.*\.dsl\..*' }
+            filter check_dyndns phase connect match rdns regex { '.*\.dyn\..*', '.*\.dsl\..*' }
                 disconnect "550 no residential connections"
 
             filter check_rdns phase connect match !rdns
